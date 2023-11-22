@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Resume Form</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  <form action="/submit_resume" method="post">
+    <div id="header">
+      <center><h1>Technical Resume Form</h1></center>
+    </div>
+    
+
+    <!-- Personal Details -->
+    <h2>Personal Details</h2>
+    <label for="full_name">Full Name:<span style="color: red;">*</span> </label>
+    <input type="text" id="full_name" name="full_name" required>
+
+    <label for="designation">Designation:<span style="color: red;">*</span> </label>
+    <input type="text" id="designation" name="designation" required>
+
+    
+    <label for="profile_photo">Profile Photo:<span style="color: red;">*</span> </label>
+    <input  type="file" name="profile_photo" id="profile_photo" accept="image/*" onchange="validateFile()" required>
+    <div class="file-input-wrapper">
+      <span  class="remove-file" onclick="removeProfilePhoto()"><i class="fas fa-times-circle"></i></span>
+    </div>
+
+    <!-- Contact Details -->
+    <h2>Contact Details</h2>
+    <label for="mail_id">Mail ID:<span style="color: red;">*</span> </label>
+    <input type="email" id="mail_id" name="mail_id" required>
+
+    <label for="mobile_number">Mobile Number:<span style="color: red;">*</span> </label>
+    <div class="mobile-number-container">
+      <!-- Country Code Dropdown -->
+      <div class="country-code">
+        <select id="option" name="country_code" id="country_code">
+          <option   value="+91">+91 (India)</option>
+          <option value="+1">+1 (United States)</option>
+          <option value="+44">+44 (United Kingdom)</option>
+          <option value="+49">+49 (Germany)</option>
+          <option value="+81">+81 (Japan)</option>
+          <option value="+33">+33 (France)</option>
+          <option value="+91">+91 (India)</option>
+          <option value="+86">+86 (China)</option>
+          <option value="+7">+7 (Russia)</option>
+          <option value="+61">+61 (Australia)</option>
+          <option value="+55">+55 (Brazil)</option>
+          <option value="+82">+82 (South Korea)</option>
+          <option value="+34">+34 (Spain)</option>
+          <option value="+39">+39 (Italy)</option>
+          <option value="+52">+52 (Mexico)</option>
+          <option value="+234">+234 (Nigeria)</option>
+          <option value="+27">+27 (South Africa)</option>
+          <option value="+351">+351 (Portugal)</option>
+          <option value="+31">+31 (Netherlands)</option>
+          <option value="+46">+46 (Sweden)</option>
+          <option value="+81">+81 (Japan)</option>
+          <option value="+966">+966 (Saudi Arabia)</option>
+          <option value="+54">+54 (Argentina)</option>
+          <option value="+62">+62 (Indonesia)</option>
+          <option value="+91">+91 (India)</option>
+          <option value="+972">+972 (Israel)</option>
+          <option value="+63">+63 (Philippines)</option>
+          <option value="+82">+82 (South Korea)</option>
+          <option value="+506">+506 (Costa Rica)</option>
+          <option value="+507">+507 (Panama)</option>
+          <option value="+52">+52 (Mexico)</option>
+          <option value="+66">+66 (Thailand)</option>
+          <option value="+353">+353 (Ireland)</option>
+          <option value="+47">+47 (Norway)</option>
+          <option value="+64">+64 (New Zealand)</option>
+          <option value="+234">+234 (Nigeria)</option>
+          <option value="+92">+92 (Pakistan)</option>
+          <option value="+92">+92 (Pakistan)</option>
+          <option value="+65">+65 (Singapore)</option>
+          <option value="+34">+34 (Spain)</option>
+          <option value="+46">+46 (Sweden)</option>
+          <option value="+41">+41 (Switzerland)</option>
+          <option value="+971">+971 (United Arab Emirates)</option>
+          <option value="+90">+90 (Turkey)</option>
+          <option value="+256">+256 (Uganda)</option>
+          <option value="+380">+380 (Ukraine)</option>
+          <option value="+44">+44 (United Kingdom)</option>
+          <option value="+598">+598 (Uruguay)</option>
+          <option value="+998">+998 (Uzbekistan)</option>
+                 
+        </select>
+      </div>
+
+      
+      <input type="tel" name="mobile_number" id="mobile_number" class="mobile-number-input" pattern="[0-9]{10}" required>
+    </div>
+
+    <label for="address">Address:<span style="color: red;">*</span> </label>
+    <!-- <textarea id="address" name="address" rows="3" maxlength="100" required></textarea> -->
+    <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your address" maxlength="100" oninput="updateCharacterCount('address', 'address-count')"></textarea>
+    <span id="address-count">100 characters remaining</span>
+
+    <!-- Profile Links -->
+    <h2>Profile Links</h2>
+    <label for="linkedin">LinkedIn:<span style="color: red;">*</span> </label>
+    <input type="text" id="linkedin" name="linkedin" required>
+
+    <label for="github">GitHub:<span style="color: red;">*</span> </label>
+    <input type="text" id="github" name="github" required>
+
+    <label for="codechef">CodeChef:<span style="color: red;">*</span> </label>
+    <input type="text" id="codechef" name="codechef" required>
+
+    <label for="leetcode">LeetCode:<span style="color: red;">*</span> </label>
+    <input type="text" id="leetcode" name="leetcode" required>
+
+    <label for="hackerrank">HackerRank:<span style="color: red;">*</span> </label>
+    <input type="text" id="hackerrank" name="hackerrank" required>
+
+    <label for="hackerearth">HackerEarth:<span style="color: red;">*</span> </label>
+    <input type="text" id="hackerearth" name="hackerearth" required>
+
+    <!-- Career Objective -->
+    <h2>Career Objective</h2>
+    <!-- <textarea id="career_objective" name="career_objective" rows="4" maxlength="750" required></textarea> -->
+    <textarea id="career_objective" name="career_objective" rows="4" cols="50" placeholder="Enter your career objective" maxlength="750" oninput="updateCharacterCount('career_objective', 'career-objective-count')"></textarea>
+    <span id="career-objective-count">750 characters remaining</span>
+
+    <!-- Education -->
+    <h2>Education</h2>
+    
+    <b><h3 style="color: black;">Degree</h3></b>
+    <label for="degree_name">Degree Name:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_name" name="degree_name" required>
+    
+
+    <label for="specialization">Specialization:<span style="color: red;">*</span> </label>
+    <input type="text" id="specialization" name="specialization" required>
+
+
+    <label for="degree_place">Place:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_place" name="degree_place" required>
+
+    <label for="degree_duration">Duration:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_duration" name="degree_duration" required>
+
+    <label for="degree_cgpa">CGPA:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_cgpa" name="degree_cgpa" required>
+
+
+    <b><h3 style="color: black;">12th / Diploma</h3></b>
+    <label for="degree_name">Degree Name:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_name" name="degree_name" required>
+    
+
+    <label for="specialization">Specialization:<span style="color: red;">*</span> </label>
+    <input type="text" id="specialization" name="specialization" required>
+
+
+    <label for="degree_place">Place:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_place" name="degree_place" required>
+
+    <label for="degree_duration">Duration:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_duration" name="degree_duration" required>
+
+    <label for="degree_cgpa">CGPA:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_cgpa" name="degree_cgpa" required>
+
+    <b><h3 style="color: black;">SSC</h3></b>
+    
+    <label for="degree_place">Place:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_place" name="degree_place" required>
+
+    <label for="degree_duration">Duration:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_duration" name="degree_duration" required>
+
+    <label for="degree_cgpa">CGPA:<span style="color: red;">*</span> </label>
+    <input type="text" id="degree_cgpa" name="degree_cgpa" required>
+
+    
+
+    <!-- Skills -->
+    <h2>Skills <button type="button" class="add-button" onclick="addSkill()"><i class="fas fa-plus"></i></button></h2>
+    <div id="skills-container">
+      <!-- Initial skill input field -->
+      <div class="skill-input">
+        <label for="skill_1">Skill:<span style="color: red;">*</span> </label>
+        <input type="text" name="skills[]" id="skill_1" required>
+        <!-- Delete button for the initial skill -->
+        <!-- <button type="button" class="delete-button" onclick="deleteSkill(this)"><i class="fas fa-trash"></i></button> -->
+      </div>
+    </div>
+
+
+    
+
+    <!-- Certifications -->
+    <h2>Certifications 
+      <!-- <button type="button" class="delete-button" onclick="deleteSection('certifications')"><i class="fas fa-trash"></i></button> -->
+      <button type="button" class="add-button" onclick="addCertificationSet()"><i class="fas fa-plus"></i></button>
+    </h2>
+    <div id="certifications-container">
+      <!-- Initial certification set -->
+      <div class="certification-set">
+        <div class="section-input">
+          <label for="certification_name">Certification Name:<span style="color: red;">*</span> </label>
+          <input type="text" name="certification_name[]" required>
+        </div>
+        <div class="section-input">
+          <label for="certified_by">Certified By:<span style="color: red;">*</span> </label>
+          <input type="text" name="certified_by[]" required>
+        </div>
+        <div class="section-input">
+          <label for="certification_year">Year:<span style="color: red;">*</span> </label>
+          <input type="text" name="certification_year[]" required>
+        </div>
+        <div class="section-input">
+          <!-- <button type="button" class="delete-button" onclick="deleteCertificationSet(this)"><i class="fas fa-trash"></i></button> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <h2>Projects
+      <!-- <button type="button" class="delete-button" onclick="deleteSection('projects')"><i class="fas fa-trash"></i></button> -->
+      <button type="button" class="add-button" onclick="addProjectSet()"><i class="fas fa-plus"></i></button>
+    </h2>
+    <div id="projects-container">
+      <!-- Initial project set -->
+      <div class="project-set">
+        <div class="section-input">
+          <label for="project_name">Project Name:<span style="color: red;">*</span> </label>
+          <input type="text" name="project_name[]" required>
+        </div>
+        <div class="section-input">
+          <label for="tasks">Tasks:<span style="color: red;">*</span> </label>
+          <input type="text" name="tasks[]" required>
+        </div>
+        <div class="section-input">
+          <label for="tech">Technology Used:<span style="color: red;">*</span> </label>
+          <input type="text" name="tech[]" required>
+        </div>
+        <div class="section-input">
+          <label for="project_link">Link:<span style="color: red;">*</span> </label>
+          <input type="text" name="project_link[]" required>
+        </div>
+        <div class="section-input">
+          <!-- <button type="button" class="delete-button" onclick="deleteProjectSet(this)"><i class="fas fa-trash"></i></button> -->
+        </div>
+      </div>
+    </div>
+
+    <br> 
+    
+    <button type="button" class="delete-button" onclick="deleteSet(this.parentNode)"><i class="fas fa-trash"></i></button>
+    <br><br><br>
+    </div>
+
+
+    <!-- Achievements -->
+    <h2>Achievements
+      <button type="button" class="delete-button" onclick="deleteSection('achievements')"><i class="fas fa-trash"></i></button>
+      <button type="button" class="add-button" onclick="addAchievementSet()"><i class="fas fa-plus"></i></button>
+    </h2>
+    <div id="achievements-container">
+      <!-- Initial achievement set -->
+      <div class="achievement-set">
+        <div class="section-input">
+          <label for="achievement">Achievement:<span style="color: red;">*</span> </label>
+          <input type="text" name="achievement[]" required>
+        </div>
+        <div class="section-input">
+          <!-- <button type="button" class="delete-button" onclick="deleteAchievementSet(this)"><i class="fas fa-trash"></i></button> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <h2>Experience
+      <button type="button" class="delete-button" onclick="deleteSection('experience')"><i class="fas fa-trash"></i></button>
+      <button type="button" class="add-button" onclick="addExperienceSet()"><i class="fas fa-plus"></i></button>
+    </h2>
+    <div id="experience-container">
+      <!-- Initial experience set -->
+      <div class="experience-set">
+        <div class="section-input">
+          <label for="role">Role:<span style="color: red;">*</span></label>
+          <input type="text" name="role[]" required>
+        </div>
+        <div class="section-input">
+          <label for="company">Company:<span style="color: red;">*</span></label>
+          <input type="text" name="company[]" required>
+        </div>
+        <div class="section-input">
+          <label for="duration">Duration:<span style="color: red;">*</span></label>
+          <input type="text" name="duration[]" required>
+        </div>
+        <div class="section-input">
+          <label for="description">Description:<span style="color: red;">*</span></label>
+          <!-- <textarea name="description[]" rows="4" cols="50" placeholder="Enter job description" required></textarea> -->
+          <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter a description" maxlength="200" oninput="updateCharacterCount('description', 'description-count')"></textarea>
+          <span id="description-count">200 characters remaining</span>
+        </div>
+        <div class="section-input">
+          <button type="button" class="delete-button" style="top:2vmin;" onclick="deleteExperienceSet(this)"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  
+
+</body>
+</html>

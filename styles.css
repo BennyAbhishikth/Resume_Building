@@ -1,0 +1,213 @@
+body 
+{
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(247, 230, 207, 0.651); 
+    color: #495057;
+    background-color: rgba(130, 251, 251, 0.141);
+}
+h1
+{
+    color: #ffffff;
+}
+
+h2 
+{
+    color: black; 
+}
+
+form 
+{
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(186, 120, 240, 0.514); 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: solid black;
+    background-color: rgba(247, 230, 207, 0.921);
+    
+}
+
+label 
+{
+    display: block;
+    margin-top: 15px;
+    color: #495057;
+    
+}
+
+input, textarea 
+{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da; 
+    background-color: #ffffff; 
+    color: teal; 
+    font-weight: 900;
+    border-radius: 4px;
+    float: left;
+    background-color: rgba(98, 111, 124, 0.179);
+    border-style: inset;
+}
+
+.add-button 
+{
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: 10px;
+}
+
+.skill-input 
+{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.delete-button 
+{
+    position: absolute;
+    top: 3vmin;
+    right: 0;
+    font-size: 18px;
+    color: #dc3545;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.delete-button:hover 
+{
+    text-decoration: underline;
+}
+
+.add-button,
+.delete-button 
+{
+    font-size: 24px;
+    color: #007bff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: 10px;
+}
+
+.delete-button:hover 
+{
+    color: red;
+}
+
+.certification-set 
+{
+    position: relative;
+    margin-bottom: 10px;
+}
+.project-set
+{
+    position: relative;
+    margin-bottom: 10px;
+}
+.achievement-set
+{
+    position: relative;
+    margin-bottom: 10px;
+}
+.experience-set
+{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+button 
+{
+    background-color: #007bff; 
+    color: #ffffff; 
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover 
+{
+    background-color: #0056b3; 
+}
+
+
+
+#header
+{
+    width: 94%;
+    padding: 3vmin;
+    background-color:rgb(98, 111, 124);
+    position: relative;
+}
+label
+{
+    font-weight: 900;
+}
+
+.file-input-wrapper
+{
+    position: relative;
+}
+
+.file-input-wrapper input[type=file] 
+{
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    
+}
+
+.file-input-wrapper .remove-file 
+{
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    color: #dc3545; 
+    cursor: pointer;
+}
+
+.mobile-number-container 
+{
+    display: flex;
+    align-items: center;
+}
+
+
+.country-code 
+{
+    padding: 10px;
+    background-color: #f0f0f0; 
+    /*background-color: teal;*/
+    border: 1px solid #ccc;
+    border-right: none; 
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+
+.mobile-number-input 
+{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+#option
+{
+    padding: 0.7vmin;
+    background-color: rgba(131, 155, 159, 0.234);
+}
